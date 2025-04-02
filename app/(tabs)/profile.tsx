@@ -8,9 +8,12 @@ const ProfilePage = () => {
       <Text>ProfilePage</Text>
       <Link
         href={"/(others)/dummy"}
-        className="mt-5 bg-gray-400 p-[1rem] focus:bg-red-600"
+        className="mt-5 bg-gray-400 p-[1rem] rounded-full"
       >
-        Move to Dummy Page <Ionicons name="arrow-forward" size={20} />
+        <View className="flex-row items-center">
+          <Text className="text-white font-bold mr-2">Move to Dummy Page</Text>
+          <Ionicons name="arrow-forward" size={20} color={"white"} />
+        </View>
       </Link>
     </View>
   );

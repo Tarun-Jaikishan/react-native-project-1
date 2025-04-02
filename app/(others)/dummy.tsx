@@ -25,16 +25,7 @@ const DummyPage = () => {
       </Pressable>
 
       <Pressable
-        onPress={async () => {
-          await Notifications.scheduleNotificationAsync({
-            content: {
-              title: "Hello! 👋",
-              body: "This is a push notification from your app!",
-            },
-            trigger: null,
-          });
-          console.log("s");
-        }}
+        onPress={() => alert("Notified")}
         className="mt-5 bg-blue-900 px-10 py-2 rounded"
       >
         <Text className="text-white">Notify</Text>

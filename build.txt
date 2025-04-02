@@ -1,1 +1,77 @@
 npx expo install expo-dev-client
+
+
+### EAS
+
+I'll provide instructions for building your app using EAS (Expo Application Services). Here's a step-by-step guide:
+
+## Setting up EAS Build
+
+1. First, install the EAS CLI:
+```bash
+npm install -g eas-cli
+```
+
+2. Log in to your Expo account:
+```bash
+eas login
+```
+
+3. Initialize EAS in your project:
+```bash
+eas build:configure
+```
+
+## Building your Android App
+
+4. Create a build for Android:
+```bash
+# For internal testing APK
+eas build --platform android --profile preview
+
+# For production-ready AAB (Google Play)
+eas build --platform android --profile production
+```
+
+## Common build profiles
+
+EAS uses different profiles for different build types. Here's what the automatically generated `eas.json` typically looks like:
+
+```json
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  }
+}
+```
+
+## Advanced options
+
+- To build for internal distribution with custom config:
+```bash
+eas build --platform android --profile development
+```
+
+- To specify a specific Android version code:
+```bash
+eas build --platform android --profile production --auto-submit --android-version-code 5
+```
+
+- To get build logs in real-time:
+```bash
+eas build:list
+eas build:logs
+```
+
+Once the build completes, you'll get a URL to download your APK or AAB file. The APK can be installed directly on Android devices, while the AAB is for Google Play Store submission.
+
+Would you like me to provide any additional details about specific EAS build options?
